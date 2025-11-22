@@ -1,0 +1,29 @@
+# PHP
+*.log
+*.cache
+
+# Uploads
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Config (uncomment in production to protect credentials)
+# config/config.php
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/*
+!tmp/.gitkeep
+
+# Dependencies (if using composer in future)
+/vendor/
+composer.lock
