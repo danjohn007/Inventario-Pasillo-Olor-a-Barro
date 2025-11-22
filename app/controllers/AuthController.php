@@ -33,9 +33,15 @@ class AuthController extends BaseController {
                 $stmt = $this->db->prepare("UPDATE usuarios SET ultimo_acceso = NOW() WHERE id = ?");
                 $stmt->execute([$user['id']]);
                 
-                // Redirigir
+                // Redirigir - validate that redirect is internal
                 $redirect = $_SESSION['redirect_to'] ?? 'home/dashboard';
                 unset($_SESSION['redirect_to']);
+                
+                // Security: Only allow internal redirects
+                if (strpos($redirect, 'http') !== false || strpos($redirect, '//') !== false) {
+                    $redirect = 'home/dashboard';
+                }
+                
                 $this->redirect($redirect);
             } else {
                 $_SESSION['error'] = 'Usuario o contraseña incorrectos';

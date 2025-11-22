@@ -8,7 +8,8 @@ class BaseController {
     
     // Cargar vista
     protected function view($view, $data = []) {
-        extract($data);
+        // Using extract with EXTR_SKIP to avoid overwriting existing variables
+        extract($data, EXTR_SKIP);
         
         // Cargar el layout
         require_once ROOT_PATH . 'app/views/layouts/header.php';
@@ -18,7 +19,8 @@ class BaseController {
     
     // Cargar vista sin layout
     protected function viewOnly($view, $data = []) {
-        extract($data);
+        // Using extract with EXTR_SKIP to avoid overwriting existing variables
+        extract($data, EXTR_SKIP);
         require_once ROOT_PATH . 'app/views/' . $view . '.php';
     }
     

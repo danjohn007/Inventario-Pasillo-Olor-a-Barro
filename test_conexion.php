@@ -86,10 +86,11 @@
             ];
             
             // Test 5: Sesiones PHP
+            $sessionActive = session_status() === PHP_SESSION_ACTIVE;
             $tests[] = [
                 'name' => 'Soporte de Sesiones PHP',
-                'status' => session_status() === PHP_SESSION_ACTIVE,
-                'message' => session_status() === PHP_SESSION_ACTIVE ? 'Sesiones habilitadas' : 'Sesiones deshabilitadas',
+                'status' => $sessionActive,
+                'message' => $sessionActive ? 'Sesiones activas y funcionando' : 'Sesiones disponibles (se inician automáticamente)',
                 'icon' => 'fa-user-shield'
             ];
             
