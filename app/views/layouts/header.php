@@ -71,6 +71,16 @@
                         <a href="<?= BASE_URL ?>reportes" class="border-transparent text-gray-500 hover:border-primary hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-chart-bar mr-1"></i> Reportes
                         </a>
+                        <?php if (in_array($_SESSION['user_role'], ['Administrador', 'Gerente'])): ?>
+                        <a href="<?= BASE_URL ?>usuarios" class="border-transparent text-gray-500 hover:border-primary hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            <i class="fas fa-users mr-1"></i> Usuarios
+                        </a>
+                        <?php endif; ?>
+                        <?php if ($_SESSION['user_role'] === 'Administrador'): ?>
+                        <a href="<?= BASE_URL ?>configuracion/general" class="border-transparent text-gray-500 hover:border-primary hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            <i class="fas fa-cog mr-1"></i> Config
+                        </a>
+                        <?php endif; ?>
                     </div>
                     <?php endif; ?>
                 </div>
