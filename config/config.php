@@ -21,9 +21,9 @@ define('ROOT_PATH', dirname(__DIR__) . '/');
 // IMPORTANTE: En producción, cambiar estas credenciales y usar un usuario con permisos limitados
 // Considerar usar variables de entorno para mayor seguridad
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'inventario_artesanal');
-define('DB_USER', 'root');  // Cambiar en producción
-define('DB_PASS', '');      // Cambiar en producción
+define('DB_NAME', 'janetzy_inventarios');
+define('DB_USER', 'janetzy_inventarios');  // Cambiar en producción
+define('DB_PASS', 'Danjohn007!');      // Cambiar en producción
 define('DB_CHARSET', 'utf8mb4');
 
 // Configuración del sitio
